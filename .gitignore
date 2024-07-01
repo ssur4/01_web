@@ -2,3 +2,6 @@
 /0628_sql
 /Exercise
 /assets
+
+node_modules/
+logs
