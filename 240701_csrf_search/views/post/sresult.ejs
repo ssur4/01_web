@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홈</title>
+</head>
+<body>
+  <%- include('../menu.html') %>
+
+  <div class = "container input-group m1-2 my-3">
+    <input class = "form-control sword" type="search" placeholder="검색어 입력">
+    <button class = "btn btn-success input-group-append sbtn">검색하기</button>
+  </div>
+
+  <!-- <table class="table table-hover table-striped text-center container mt-4" style="border: 1px solid"> -->
+  <!-- 검색결과 출력 -->
+   <h2 class = "m1-2 my-3 text-center">검색 결과</h2>
+   <div class = "container mt-4" style="border: 2px solid">
+    <ul class = "list-group">
+      <% for (var i = 0; i < data.length; i++) { %>
+        <li calss = "list-group-item">
+          <div clsss = "card" style = "width : 100%"></div>
+          <div class = "card-header">
+            <h4 class = "card-title"><%= data[i].title %></h4>
+          </div>
+          <div class = "card-body">
+            <p class = "card-text"><%= data[i].content %></p>
+            <img src = "/image/<%= data[i].path %>" width = "200"/><p></p>
+            <p class = "card-subtitle mb-2">작성일 : <%= data[i].date %></p>
+            <a href="/edit/<%= data[i]._id %>" class = "card-link">수정하기</a>
+            <a href="/post/list/" class = "card-link">목록</a>
+          </div>
+        </li>
+        <% } %>
+    </ul>
+   </div>
+</body>
+</html>
