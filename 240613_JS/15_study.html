@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+      .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+  
+        .b-example-divider {
+          width: 100%;
+          height: 3rem;
+          background-color: rgba(0, 0, 0, .1);
+          border: solid rgba(0, 0, 0, .15);
+          border-width: 1px 0;
+          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+  
+        .b-example-vr {
+          flex-shrink: 0;
+          width: 1.5rem;
+          height: 100vh;
+        }
+  
+        .bi {
+          vertical-align: -.125em;
+          fill: currentColor;
+        }
+  
+        .nav-scroller {
+          position: relative;
+          z-index: 2;
+          height: 2.75rem;
+          overflow-y: hidden;
+        }
+  
+        .nav-scroller .nav {
+          display: flex;
+          flex-wrap: nowrap;
+          padding-bottom: 1rem;
+          margin-top: -1px;
+          overflow-x: auto;
+          text-align: center;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
+  
+        .btn-bd-primary {
+          --bd-violet-bg: #712cf9;
+          --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  
+          --bs-btn-font-weight: 600;
+          --bs-btn-color: var(--bs-white);
+          --bs-btn-bg: var(--bd-violet-bg);
+          --bs-btn-border-color: var(--bd-violet-bg);
+          --bs-btn-hover-color: var(--bs-white);
+          --bs-btn-hover-bg: #6528e0;
+          --bs-btn-hover-border-color: #6528e0;
+          --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+          --bs-btn-active-color: var(--bs-btn-hover-color);
+          --bs-btn-active-bg: #5a23c8;
+          --bs-btn-active-border-color: #5a23c8;
+        }
+  
+        .bd-mode-toggle {
+          z-index: 1500;
+        }
+  
+        .bd-mode-toggle .dropdown-menu .active .bi {
+          display: block !important;
+        }
+      .container {
+          margin-top: 20px;
+      }
+
+      .class-header {
+          color: #f57c00;
+          font-weight: bold;
+          margin-bottom: 10px;
+      }
+
+      .nav-tabs .nav-link.active {
+          color: #f57c00 !important;
+          font-weight: bold;
+          border-color: #f57c00 #f57c00 #fff !important;
+      }
+
+      .class-selection {
+          margin-top: 20px;
+      }
+
+      .class-selection .btn {
+          margin: 5px;
+      }
+
+      .card {
+          margin-bottom: 20px;
+      }
+
+      .month-navigation {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+      }
+
+      .month-navigation button {
+          background: none;
+          border: none;
+          font-size: 1.5rem;
+          cursor: pointer;
+      }
+
+      .month-navigation span {
+          margin: 0 20px;
+          font-size: 1.5rem;
+          font-weight: bold;
+      }
+  </style>
+  </head>
+<body>
+  <header>  
+    <div class="container">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary"> <!-- 내비게이션바 -->  
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">TECH!T</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">테킷 스쿨</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">온보딩 트랙</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">스타트업 스테이션</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">!T 트랜드</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">이벤트</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">기업 해커톤</a>
+              </li>
+              <li class="myclass">
+                <a class="nav-link" href="#">내 강의실</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav><!-- 내비게이션 바 끝 --> 
+    </div>
+    <img src="file:///C:/2024_study/01_web/06_11_html/firstimage.PNG">
+</header>
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <p class="lead text-body-secondary">테킷 스쿨 본모집 지원</p>
+      <h1 class="fw-light">모집 중인 테킷 스쿨을 확인해 보세요</h1>
+    </div>
+  </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+          <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">모집중</button>
+            </div>
+          <div class="card-body">
+            <p class="card-text">나만을 위한 취업 로드맵으로 완성하는 파이썬 활용 백엔드 개발자 교육 과정</p>
+            <div class="d-flex justify-content-between align-items-center">
+
+              <small class="text-body-secondary">24.05.23 ~ 24.06.19 까지</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">모집중</button>
+              </div>
+            <div class="card-body">
+              <p class="card-text">AI 웹 서비스 스쿨</p>
+              <div class="d-flex justify-content-between align-items-center">
+
+                <small class="text-body-secondary">24.06.04 ~ 24.07.01 까지</small>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+<main>
+    <section class="hero">
+        <div class="container">
+            <!-- 메인 콘텐츠 -->
+        </div>
+    </section>
+    <section class="content">
+        <div class="container">
+          <div class="class-header">
+            테킷 스쿨 일정 확인하기
+        </div>
+        <h4>한 눈에 보는 테킷 스쿨 오픈 일정</h4>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="class-tab" data-toggle="tab" href="#class" role="tab" aria-controls="class" aria-selected="false">클래스별</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="month-tab" data-toggle="tab" href="#month" role="tab" aria-controls="month" aria-selected="true">월별로 보기</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="class" role="tabpanel" aria-labelledby="class-tab">
+                <div class="class-selection">
+                    <p>관심있는 클래스를 선택해주세요.</p>
+                    <button type="button" class="btn btn-outline-secondary">프론트엔드</button>
+                    <button type="button" class="btn btn-outline-secondary">백엔드 : Java</button>
+                    <button type="button" class="btn btn-outline-secondary">백엔드 : Python</button>
+                    <button type="button" class="btn btn-outline-secondary">앱스쿨 : iOS</button>
+                    <button type="button" class="btn btn-outline-secondary">AI 스쿨</button>
+                    <button type="button" class="btn btn-outline-secondary">앱스쿨 : Android</button>
+                    <button type="button" class="btn btn-outline-secondary">데이터 분석</button>
+                    <button type="button" class="btn btn-outline-secondary">디자인</button>
+                    <button type="button" class="btn btn-outline-secondary">블록체인</button>
+                    <button type="button" class="btn btn-outline-secondary">스타트업 스테이션</button>
+                    <button type="button" class="btn btn-outline-secondary">프론트엔드 심화</button>
+                    <button type="button" class="btn btn-outline-secondary">백엔드 심화</button>
+                </div>
+            </div>
+            <div class="tab-pane fade show active" id="month" role="tabpanel" aria-labelledby="month-tab">
+                <div class="month-navigation">
+                    <button type="button">&lt;</button>
+                    <span>2024년 06월</span>
+                    <button type="button">&gt;</button>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="path/to/python-image.png" class="card-img-top" alt="Python">
+                            <div class="card-body">
+                                <h5 class="card-title">백엔드 스쿨 11기 : Python</h5>
+                                <p class="card-text">나만을 위한 취업 로드맵으로 완성하는 파이썬 백엔드 개발자 되기</p>
+                                <p class="card-text"><small class="text-muted">24.05.23 ~ 24.06.19 까지</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="path/to/startup-image.png" class="card-img-top" alt="Startup">
+                            <div class="card-body">
+                                <h5 class="card-title">스타트업 스테이션 9기</h5>
+                                <p class="card-text">IT 창업 시작을 위한 첫 번째 스텝</p>
+                                <p class="card-text"><small class="text-muted">24.05.13 ~ 24.06.19 까지</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="path/to/ai-image.png" class="card-img-top" alt="AI">
+                            <div class="card-body">
+                                <h5 class="card-title">AI 웹 서비스 스쿨 1기</h5>
+                                <p class="card-text">AI PLANET 지구와는 다른 6개월, 밀도있는 AI 서비스 개발</p>
+                                <p class="card-text"><small class="text-muted">24.06.04 ~ 24.07.01 까지</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="path/to/frontend-image.png" class="card-img-top" alt="Frontend">
+                            <div class="card-body">
+                                <h5 class="card-title">프론트엔드 스쿨 11기</h5>
+                                <p class="card-text">수료생 99%가 추천하는 프론트엔드 집중 부트캠프</p>
+                                <p class="card-text"><small class="text-muted">24.06.18 ~ 24.07.18 까지</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </div>
+    </section>
+</main>
+    
+</body>
+
+<footer >
+  <div class="container text-center">
+    <div class="row">
+      <div class="col"><img src="image/techit_logo.svg" alt=""></div>
+      <div class="col">
+        <h5>모든 교육 경험</h5>
+        <ul class="mt-4 space-y-3">
+          <li class="text-sm font-semibold">
+            KDT 테킷 스쿨
+          </li>
+          <li class="text-sm font-semibold">
+            온보딩 트랙
+          </li>
+          <li class="text-sm font-semibold">
+            스타트업 스테이션
+          </li>
+          <li class="text-sm font-semibold">
+            !T 트렌드
+          </li>
+          <li class="text-sm font-semibold">
+            이벤트
+          </li>
+          <li class="text-sm font-semibold">
+            기업 해커톤
+          </li>
+        </ul>
+      </div>
+      <div class="col">
+        <h5>회사 소개</h5>
+        <ul>
+          <li>
+            LIKELION
+          </li>
+          <li>
+            채용
+          </li>
+      </ul>
+      </div>
+    </div>
+
+
+
+  <div>
+    <span >상호명: 멋쟁이사자처럼</span>
+    <span >대표: 나성영</span>
+    <span >contact@likelion.net</span>
+  </div>
+
+  </div>
+</footer>
+</html>

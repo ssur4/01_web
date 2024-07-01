@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+
+  <!-- Navbar 불러오기 -->
+  <%- include('menu.html') %>
+
+    <div style="font-size: 2em; margin-top: 0.7em; margin-bottom:0.5em; margin-left: 2em">매매 목록</div>
+
+    <div class="input-group mb-3 w-75" style="margin-left:10em;">
+      <input type="search" class="form-control" id="searchInput" placeholder="주택이름을 검색하세요">
+      <button class="btn btn-outline-primary" type="button" id="searchBtn">검색</button>
+    </div>
+
+    <table class="table table-hover table-striped text-center container mt-4" style="border: 1px solid;">
+      <thead>
+        <tr>
+          <th>주택명</th>
+          <th>매매가</th>
+          <th>주소</th>
+          <th>등록일</th>
+          <th>매수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- EJS 문법으로 for문을 돌려야 한다. 데이터베이스의 row 수만큼 tr, td 를 생성하도록. -->
+        <!-- EJS 문법으로 작성된 내용을 EJS 엔진에서 해석하고 HTML로 작성하여 응답을 한다.(-> 클라이언트). : Server side render-->
+        <% for(let i=0; i<data.length; i++){ %>
+          <tr>
+            <td><a href="/content/<%= data[i]._id %>">
+                <%= data[i].title %>
+              </a></td>
+            <td>
+              <%= data[i].price %>
+            </td>
+            <td>
+              <%= data[i].address %>
+            </td>
+            <td>
+              <%= data[i].date %>
+            </td>
+            <td>
+              <button data-_id="<%= data[i]._id %>" class='delete btn btn-outline-danger'>매수</button>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
+
+    <!-- jQuery 를 사용-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+
+      $('#searchBtn').click(function () {
+        let searchInput = $('#searchInput').val();
+        location.href = '\search?value=' + searchInput;
+      })
+
+
+      $('.delete').click(function (e) {   //delete 클래스의 click 이벤트핸들러
+        let _id = e.target.dataset._id;
+
+        if (confirm("매수를 진행하시겠습니까?")) {
+          let item = $(this);   //jQuery 객체로 변경
+          
+          $.ajax({
+            type: 'post',
+            url: '/delete',
+            data: { _id: _id }    
+          })
+            .done(function (result) {
+              item.parent('td').parent('tr').remove()
+            })
+            .fail(function (xhr, textStatus, err) {
+              alert(err);
+            })
+        } else {
+          console.log('매수 취소');
+        }
+      });
+    </script>
+    </body>
+
+</html>

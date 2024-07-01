@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 제이쿼이 연습 -->
+     <script>
+        // html 문서의 끝까지 도달해서, DOM이 다 끝나고! 준비가 되면, 콜백함수를 실행
+        $(document).ready(function(){
+            // 버튼을 누르면, alert 실행되도록, 이벤트리스너 추가
+            // btn.addEventListener('click', function(){
+            //     alert();
+            // });
+            
+            // 제이쿼리로 위의 동작을 간단하게 작성 + id 사용 //class 사용 (그룹화 가능)
+            $('#btn').click(function(){
+                    $.ajax({
+                        type : 'post',
+                        url : 'http://127.0.0.1:8080/delete',
+                        data : { id : 1 }
+                    })
+                    .done(function(result){})
+                    .fail(function(xhr, textStatus, err){})
+            });
+        });
+     </script>
+</head>
+<body>
+    hi
+    <button id = "btn" class = 'a'>전송</button>
+    <button id = "btn2" class = 'a'>전송</button>
+    <button id = "btn3" class = 'b'>전송</button>
+</body>
+</html>

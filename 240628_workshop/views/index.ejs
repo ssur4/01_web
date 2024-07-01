@@ -1,0 +1,32 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+
+    <%- include('menu_workshop8.html') %>
+
+    <% if(typeof data != 'undefined' && data.alertMsg){ %>
+        <script>
+          alert(`<%= data.alertMsg %>`) ;
+        </script>            
+    <% } %>
+      
+    <h1>홈</h1>
+
+
+    <!-- <div class="sidebar"></div>
+    <div class="content">
+      <h1>홈</h1>
+      <form action="/auth/login" method="post">
+        <label for="username">아이디 :</label>
+        <input type="text" id="username" name="auth_id" required>
+        <label for="password">비밀번호 :</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div> -->
+  </body>
+</html>

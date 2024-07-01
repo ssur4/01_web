@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = button id ='btn' value = '전송'></button>
+    
+    <script>
+
+        // btn.addEventListener('click', function(){ // (이벤트 이름, 이벤트 핸들러)
+        //     alert(this.value);
+        // }) 
+        
+        //btn.removeEventLitener('click');
+
+        //이벤트객체
+        function first(e){
+            alert(e.type + ":" + e.clientX + ":" + e.clientY);
+            console.log(e);
+        }
+        btn.addEventListener('click', first);
+
+
+    </script>
+
+</body>
+</html>
